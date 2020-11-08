@@ -1,5 +1,6 @@
 package com.peng.shop.temp.web;
 
+import com.peng.shop.base.constant.Constant;
 import com.peng.shop.base.model.ReturnJson;
 import com.peng.shop.base.model.TestModel;
 import com.peng.shop.temp.vo.SwiperVO;
@@ -22,9 +23,11 @@ public class TempController {
     @GetMapping("index/getSwiperData")
     public ReturnJson getSwiperData() {
         List<SwiperVO> swiperVOList = new ArrayList<>();
-        swiperVOList.add(new SwiperVO("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1604235615&di=d64c4653eddef00e701a4d73ade14d79&src=http://a0.att.hudong.com/18/56/14300000958002128488569856508.jpg", 1));
-        swiperVOList.add(new SwiperVO("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604245710235&di=09ea84205af09b12f3c35369972f33d7&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F52%2F52%2F01200000169026136208529565374.jpg", 2));
-        swiperVOList.add(new SwiperVO("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604245710233&di=04478c3e3f6d734a00ff7b23040561c3&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F25%2F99%2F19300000421423134190997943822.jpghttps://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604245710233&di=04478c3e3f6d734a00ff7b23040561c3&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F25%2F99%2F19300000421423134190997943822.jpg", 3));
+        swiperVOList.add(new SwiperVO(Constant.BaseConfig.SERVER_IP + "/shop/cb6410526aca76058b3cc83ebcc38fd9.jpg", 1));
+        swiperVOList.add(new SwiperVO(Constant.BaseConfig.SERVER_IP + "/shop/0ed363a7a4cb909b1c3c84f792b5d01f.png", 2));
+        swiperVOList.add(new SwiperVO(Constant.BaseConfig.SERVER_IP + "/shop/5156a02acde786e2c5f3243c37701d7c.jpg", 3));
         return ReturnJson.success(swiperVOList);
     }
+
+
 }
