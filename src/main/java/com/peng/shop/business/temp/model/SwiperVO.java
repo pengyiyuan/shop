@@ -1,4 +1,4 @@
-package com.peng.shop.business.temp.vo;
+package com.peng.shop.business.temp.model;
 
 public class SwiperVO {
 
