@@ -36,3 +36,8 @@
 
 - Swagger是用来显示接口文档并且可以直接调用接口，地址为 http://ip:port/swagger-ui.html
 - 在控制层添加类注解@Api(tags = "描述")，在接口方法上添加方法注解@ApiOperation(value = "接口描述")，还有方法注解@ApiImplicitParams({@ApiImplicitParam(name = "参数名", value = "参数值")，... })
+
+## 使用线程池
+
+- 在ThreadPoolConfigure添加线程池工厂类的bean
+- 在service对应方法上面添加@Async("bean的名字")注解
