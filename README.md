@@ -31,3 +31,8 @@
 
 - 在当前查询语句之前使用 PageHelper.startPage(pageNum,pageSize)指定分页的页码和显示的数量
 - 返回的list结果集使用PageInfo进行包装后返回（注意不是github上面的PageInfo）
+
+## 使用Swagger
+
+- Swagger是用来显示接口文档并且可以直接调用接口，地址为 http://ip:port/swagger-ui.html
+- 在控制层添加类注解@Api(tags = "描述")，在接口方法上添加方法注解@ApiOperation(value = "接口描述")，还有方法注解@ApiImplicitParams({@ApiImplicitParam(name = "参数名", value = "参数值")，... })
