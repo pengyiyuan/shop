@@ -8,11 +8,14 @@ import com.peng.shop.business.temp.dao.TempEntityMapper;
 import com.peng.shop.business.temp.entity.TempEntity;
 import com.peng.shop.business.temp.entity.TempEntityExample;
 import com.peng.shop.business.temp.model.SwiperVO;
+import com.peng.shop.business.temp.service.TempService;
+import com.peng.shop.business.temp.service.impl.TempServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,19 +32,24 @@ public class TempController {
     @Autowired
     TempEntityMapper mapper;
 
+    @Autowired
+//    @Qualifier("tempServiceImpl")
+    private TempService service;
+
     @GetMapping("test")
     @ApiOperation(value = "测试")
     public ReturnJson test() {
-        PageHelper.startPage(3, 2);
-        List<TempEntity> tempEntities = mapper.selectByExample(new TempEntityExample());
-        return ReturnJson.success(new PageInfo<TempEntity>(tempEntities));
+//        PageHelper.startPage(3, 2);
+//        List<TempEntity> tempEntities = mapper.selectByExample(new TempEntityExample());
+        service.test();
+        return ReturnJson.success();
     }
 
     @GetMapping("index/getSwiperData")
     @ApiOperation(value = "获取轮播图")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "date", value = "时间")
-        })
+    })
     public ReturnJson getSwiperData(@RequestParam(required = false) String date) {
         List<SwiperVO> swiperVOList = new ArrayList<>();
         swiperVOList.add(new SwiperVO(Constant.BaseConfig.SERVER_IP + "/shop/cb6410526aca76058b3cc83ebcc38fd9.jpg", 1));

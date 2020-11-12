@@ -36,6 +36,14 @@ public class ReturnJson {
         return new ReturnJson("0", "失败", data);
     }
 
+    public static ReturnJson success() {
+        return new ReturnJson("200", "成功", null);
+    }
+
+    public static ReturnJson fail() {
+        return new ReturnJson("0", "失败", null);
+    }
+
     public String getCode() {
         return code;
     }
