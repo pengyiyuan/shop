@@ -16,9 +16,7 @@
 - 项目配置文件默认application.properties，可通过spring.profiles.active=dev激活application-dev.properties配置
 - 项目启动前需要修改当前数据库配置为本地数据库配置
 
-## mybatis逆向工程
-
-#### 使用
+## mybatis逆向工程使用
 
 - 修改generatorConfig.xml文件
   1. classPathEntry修改成对应mysql-connector-java.jar包对应的地址
@@ -29,3 +27,7 @@
   6. table修改想要从该表名tableName生成，domainObjectName为生成的对象名
 - 点击maven插件栏，双击运行mybatis-generator
 
+## 使用分页插件
+
+- 在当前查询语句之前使用 PageHelper.startPage(pageNum,pageSize)指定分页的页码和显示的数量
+- 返回的list结果集使用PageInfo进行包装后返回（注意不是github上面的PageInfo）
