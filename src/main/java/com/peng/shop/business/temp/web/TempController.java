@@ -1,21 +1,19 @@
 package com.peng.shop.business.temp.web;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.peng.shop.base.constant.Constant;
-import com.peng.shop.base.model.PageInfo;
 import com.peng.shop.base.model.ReturnJson;
 import com.peng.shop.business.temp.dao.TempEntityMapper;
 import com.peng.shop.business.temp.entity.TempEntity;
 import com.peng.shop.business.temp.entity.TempEntityExample;
 import com.peng.shop.business.temp.model.SwiperVO;
 import com.peng.shop.business.temp.service.TempService;
-import com.peng.shop.business.temp.service.impl.TempServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,15 +32,15 @@ public class TempController {
 
     @Autowired
 //    @Qualifier("tempServiceImpl")
-    private TempService service;
+    TempService tempService1;
 
     @GetMapping("test")
     @ApiOperation(value = "测试")
     public ReturnJson test() {
-//        PageHelper.startPage(3, 2);
-//        List<TempEntity> tempEntities = mapper.selectByExample(new TempEntityExample());
-        service.test();
-        return ReturnJson.success();
+        PageHelper.startPage(3, 2);
+        List<TempEntity> tempEntities = mapper.selectByExample(new TempEntityExample());
+        tempService1.test();
+        return ReturnJson.success(new PageInfo<>(tempEntities));
     }
 
     @GetMapping("index/getSwiperData")

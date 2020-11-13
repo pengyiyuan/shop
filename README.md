@@ -39,5 +39,5 @@
 
 ## 使用线程池
 
-- 在ThreadPoolConfigure添加线程池工厂类的bean
+- 在ThreadPoolConfigure添加线程池工厂类的bean，可使用@ConfigurationProperties设置对应参数
 - 在service对应方法上面添加@Async("bean的名字")注解
