@@ -1,12 +1,13 @@
-create database if not exists `shop`;
+CREATE DATABASE IF NOT EXISTS `shop`;
 
 ####商品表####
-create table if not exists `goods` desc '商品表'(
-	`goods_id` bigint primary key auto_increament desc '主键id',
-	`goods_desc` varchar(100) desc '商品简介',
-	`goods_text` varchar(300) desc '商品长介绍',
-	`goods_icon` varchar(100) desc '商品缩略图',
-	`goods_image` varchar(100) desc '商品大图',
-	`goods_price` varchar(50) not null desc '商品价格',
-	`goods_num` bigint desc not null '商品数量'
-	) engine=innodb default charset=utf-8
+CREATE TABLE IF NOT EXISTS `goods` (
+  `goods_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `goods_desc` varchar(100) DEFAULT NULL COMMENT '商品简介',
+  `goods_text` varchar(300) DEFAULT NULL COMMENT '商品长介绍',
+  `goods_icon` varchar(100) DEFAULT NULL COMMENT '商品缩略图',
+  `goods_image` varchar(100) DEFAULT NULL COMMENT '商品大图',
+  `goods_price` varchar(50) NOT NULL COMMENT '商品价格',
+  `goods_num` bigint(20) NOT NULL COMMENT '商品数量',
+  PRIMARY KEY (`goods_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品表';
