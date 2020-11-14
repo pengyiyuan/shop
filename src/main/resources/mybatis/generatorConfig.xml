@@ -12,20 +12,23 @@
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
-        <javaModelGenerator targetPackage="com.peng.shop.business.temp.entity" targetProject="../shop/src/main/java">
+        <javaModelGenerator targetPackage="com.peng.shop.business.goods.entity" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>
             <!-- 从数据库返回的值被清理前后的空格  -->
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="../shop/src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.peng.shop.business.temp.dao" targetProject="../shop/src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.peng.shop.business.goods.dao" targetProject="./src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!--数据库表-->
-        <table tableName="temp" domainObjectName="TempEntity">
+<!--        <table tableName="temp" domainObjectName="TempEntity">-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+        <table tableName="goods" domainObjectName="GoodsEntity">
             <property name="useActualColumnNames" value="false"/>
         </table>
     </context>

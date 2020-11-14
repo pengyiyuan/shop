@@ -26,8 +26,8 @@ public class SwaggerConfigure extends WebMvcConfigurationSupport {
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("Kitty API Doc")
-                .description("This is a restful api document of Kitty.")
+                .title("Shop API Doc")
+                .description("This is a restful api document of Shop.")
                 .version("1.0")
                 .build();
     }

@@ -19,6 +19,10 @@ public class PageInfo<T> {
      */
     private int size;
     /**
+     * 总页数
+     */
+    private int pages;
+    /**
      * 数据
      */
     private List<T> data;
@@ -33,10 +37,12 @@ public class PageInfo<T> {
             this.pageNum = page.getPageNum();
             this.pageSize = page.getPageSize();
             this.size = page.size();
+            this.pages = page.getPages();
         }else{
             this.pageNum = 1;
             this.pageSize = data.size();
             this.size = data.size();
+            this.pages = 1;
         }
     }
 
@@ -62,6 +68,14 @@ public class PageInfo<T> {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
     public List<T> getData() {
