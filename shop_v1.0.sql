@@ -11,5 +11,6 @@ CREATE TABLE IF NOT EXISTS `goods` (
   `goods_num` bigint(20) NOT NULL COMMENT '商品数量',
   `fist_category` tinyint COMMENT '一级分类',
   `second_category` tinyint COMMENT '二级分类',
+  `activity_id` bigint(20) COMMENT '活动id',
   PRIMARY KEY (`goods_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品表';
