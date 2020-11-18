@@ -1,5 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `shop`;
 
+USE `shop`;
+
 ####商品表####
 CREATE TABLE IF NOT EXISTS `goods` (
   `goods_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
